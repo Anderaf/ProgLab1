@@ -18,8 +18,8 @@ public class Main
     for (int i = 0; i < resultArray.length; i++) 
     {
     	for (int j = 0; j < resultArray[i].length; j++) 
-      {
-    		double result; 
+      	{
+    	double result; 
 
         switch ((int)c[i]) 
         {
@@ -31,15 +31,14 @@ public class Main
         		result = (1.0/3.0 + 2 * Math.pow(x[j] * (0.25 - x[j]), x[j]))/(Math.pow( (2.0/3.0) / Math.pow(x[j], (x[j]+4) / 0.5), 2) );
         		break;
 
-			    default:
-				    result = Math.pow(2 * Math.pow(((Math.atan(Math.sin(x[j])) - 0.5)/1.0)/3.0, 3), Math.cbrt(Math.pow(Math.cos(x[j])/3.0, 2)));
-				    break;
+		default:
+			result = Math.pow(2 * Math.pow(((Math.atan(Math.sin(x[j])) - 0.5)/1.0)/3.0, 3), Math.cbrt(Math.pow(Math.cos(x[j])/3.0, 2)));
+			break;
         }
 
         	resultArray[i][j] = result;
-        	DecimalFormat df = new DecimalFormat("0.000");
-        	System.out.print(df.format(resultArray[i][j]) + " ");
-      }
+	     	System.out.printf( "%.3f ", resultArray[i][j]);
+      	}
         
     	System.out.println();
     }
